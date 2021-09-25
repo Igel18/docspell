@@ -45,7 +45,7 @@ services:
     restart: unless-stopped
     env_file: ./.env
     volumes:
-      - ./docs:/opt/docs
+      - /volume1/Daten/VirtualSystems/Container/docspell:/opt/docs
     depends_on:
       - restserver
 
@@ -54,7 +54,7 @@ services:
     container_name: postgres_db
     restart: unless-stopped
     volumes:
-      - docspell-postgres_data:/var/lib/postgresql/data/
+      - /volume1/Daten/VirtualSystems/Container/postgresdockspell:/var/lib/postgresql/data/
     environment:
       - POSTGRES_USER=dbuser
       - POSTGRES_PASSWORD=dbpass
